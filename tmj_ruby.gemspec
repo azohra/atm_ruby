@@ -5,7 +5,7 @@ require 'tmj_ruby/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'tmj_ruby'
-  spec.version       = TmjRuby::VERSION
+  spec.version       = Tmj::VERSION
   spec.authors       = ['frbk']
   spec.email         = ['']
 

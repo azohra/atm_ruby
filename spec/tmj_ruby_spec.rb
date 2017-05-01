@@ -1,7 +1,7 @@
 require "spec_helper"
 
-RSpec.describe TmjRuby do
+RSpec.describe Tmj do
   it "has a version number" do
-    expect(TmjRuby::VERSION).not_to be nil
+    expect(Tmj::VERSION).not_to be nil
   end
 end
