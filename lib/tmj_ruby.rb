@@ -1,3 +1,4 @@
+require 'httparty'
 require 'base64'
 
 require_relative 'configuration'
