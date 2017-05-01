@@ -13,8 +13,8 @@ TMJ.configure do |c|
   c.project_id  = 'CC'
   c.test_run_id = 'ss'
   c.environment = "".upcase
-  c.username    = 'cc'
-  c.password    = 'cc'
+  c.username    = 'Test'
+  c.password    = 'test'
 end
 
 RSpec.configure do |config|
