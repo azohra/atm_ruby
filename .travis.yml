@@ -2,4 +2,12 @@ sudo: false
 language: ruby
 rvm:
   - 2.4.1
-before_install: gem install bundler -v 1.14.6
+deploy:
+  provider: rubygems
+  api_key:
+    secure: ZhHolbb773hKimpg3JPjkVbRbrB5yFyLmu3uacHAsi5WFAv2xTHtc0nlg6cpebn953F3bmZ/47ltDdLL7kaQy7I+F8XPArCQpVlwk8zq4Vj6LqUxIc9tgjz1Q7kO5ciEUSGPvxwnpmBPqT+CYtKuhwfufjF9Z8LIzPKC/qq2RofHF3WDeA40/xpvjU2H+TrY15Oik8M8tWtu3A/xg+CkjQv6npQXFQJBG3Eph1e7KCsn9WB/tHJV9+Q2XzTFfjziBXZLN+B+znFi5QG/wYaJcGzIacG5wmzWcXtPc/f7qJSGlgg8y4sW+oSGeJb/GV4Kjv8T4pkmItqqkrwP8utDWrsZLkIDn65L3Joh4P61JSoOnWXtYB5Ai4YyJx5IYBj8zAZFIGQXlQzFlCiPgNy9zsR3CaUg/wVXaI8Q1nNip0NJAMvQE1qMCcVmHahwmYPKdCwDUJHbLtqFIBAFi2PHa2O8ozU5GlxoHajGzY2sDdrnXeWQukbEy9pvh3RqkOUKs6rfstF5SDLog0ZaE5T0ihMrHYufPcnIEA+aJ73SIPdnXx14pnP+AuKT3JLiVxpDvSDbkecaCeE26QQytycUuqGYfzsMvxzNeF4WrGjNY/F22iVRlX7jwiQZnGpKfzLf46MCnuNLlldA1GRJXb9mgCXcqYWo37sHhdKlBopgH8U=
+  gem: tmj_ruby
+  on:
+    tags: true
+    repo: frbk/tmj_ruby
+    branch: master
