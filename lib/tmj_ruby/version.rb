@@ -1,3 +1,3 @@
-module TmjRuby
-  VERSION = "0.0.1"
+module Tmj
+  VERSION = "0.0.2"
 end
