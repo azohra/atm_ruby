@@ -1,7 +1,7 @@
 # Test Managment For JIRA API Wrapper
 [![Gem Version](https://badge.fury.io/rb/tmj_ruby.svg)](https://badge.fury.io/rb/tmj_ruby)
 [![Build Status](https://travis-ci.org/frbk/tmj_ruby.svg?branch=master)](https://travis-ci.org/frbk/tmj_ruby)
-[![Coverage Status](https://coveralls.io/repos/github/frbk/tmj_ruby/badge.svg?branch=develop)](https://coveralls.io/github/frbk/tmj_ruby?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/frbk/tmj_ruby/badge.svg?branch=master)](https://coveralls.io/github/frbk/tmj_ruby?branch=master)
 [![Inline docs](http://inch-ci.org/github/frbk/tmj_ruby.svg?branch=master)](http://inch-ci.org/github/frbk/tmj_ruby)
 [![Dependency Status](https://gemnasium.com/badges/github.com/frbk/tmj_ruby.svg)](https://gemnasium.com/github.com/frbk/tmj_ruby)
 
