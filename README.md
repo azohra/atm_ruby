@@ -5,10 +5,6 @@
 [![Inline docs](http://inch-ci.org/github/frbk/tmj_ruby.svg?branch=master)](http://inch-ci.org/github/frbk/tmj_ruby)
 [![Dependency Status](https://gemnasium.com/badges/github.com/frbk/tmj_ruby.svg)](https://gemnasium.com/github.com/frbk/tmj_ruby)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tmj_ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -25,9 +21,47 @@ Or install it yourself as:
 
     $ gem install tmj_ruby
 
-## Usage
+## Usage(Look for API refferences [here](https://www.kanoah.com/docs/public-api/1.0/))
 
-TODO: Write usage instructions here
+#### Configuration
+
+Setup configuration in your setup file if you need to configure it once
+```ruby
+TMJ.configure do |c|
+  c.base_url    = 'http://localhost'
+  c.auth_type   = :basic
+  c.project_id  = 'PD'
+  c.test_run_id = 'TR-I123'
+  c.environment = 'Mobile'
+  c.username    = 'Test'
+  c.password    = 'test'
+end
+```
+
+Or do it everytime you create a client
+```ruby
+client = TMJ::Client.new(base_url: 'http://localhost', auth_type: :basic, 
+                         project_id: 'PD', test_run_id: 'TR-I123', 
+                         environment: 'Mobile', username: 'Test', password: 'test')
+```
+
+#### Test Case
+
+Create
+```ruby
+client = TMJ::Client.new
+client.TestCase.create()
+``
+
+Update
+Delete
+Find
+Search
+Add Attachment - TODO
+Create New Test Result
+
+#### Test Plan
+#### Test Run
 
 ## Development
 
