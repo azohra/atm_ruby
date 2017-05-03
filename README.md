@@ -51,7 +51,7 @@ Create
 ```ruby
 client = TMJ::Client.new
 client.TestCase.create()
-``
+```
 
 Update
 Delete
