@@ -50,14 +50,35 @@ client = TMJ::Client.new(base_url: 'http://localhost', auth_type: :basic,
 Create
 ```ruby
 client = TMJ::Client.new
-client.TestCase.create()
+client.TestCase.create({ "projectKey": 'JQA', "name": 'Ensure the axial-flow pump is enabled' })
 ```
 
 Update
+```ruby
+client = TMJ::Client.new
+client.TestCase.update('JQA-T1234', {"name": "Ensure the axial-flow pump is enabled"})
+```
+
 Delete
+```ruby
+client = TMJ::Client.new
+client.TestCase.delete('JQA-T1234')
+```
+
 Find
+```ruby
+client = TMJ::Client.new
+client.TestCase.find('JQA-T1234')
+```
+
 Search
+```ruby
+client = TMJ::Client.new
+client.TestCase.find('projectKey = "JQA"')
+```
+
 Add Attachment - TODO
+
 Create New Test Result
 
 #### Test Plan
