@@ -11,5 +11,5 @@ deploy:
   gem: tmj_ruby
   on:
     tags: true
-    repo: frbk/tmj_ruby
+    repo: automation-wizards/tmj_ruby
     branch: master
