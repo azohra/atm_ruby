@@ -7,6 +7,8 @@ module TMJ
     # @see https://www.kanoah.com/docs/public-api/1.0/ more info regarding test cases can be found here
     #
     class TestCase < TMJ::Services::Base
+      include TMJ::Helper::TestCase
+
       # Creates new test case
       #
       # @param [Hash] body

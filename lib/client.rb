@@ -10,14 +10,14 @@ module TMJ
       else
         raise 'Currently only supports basic authentication'
       end
-      @services_options = configure_services_options(options, header)
+      @services_options = configure_services_options(header, options)
     end
 
     def set_access_token(username, password)
       { 'Authorization' => "Basic #{Base64.encode64(username + ':' + password)[0..-2]}", 'Content-Type' => 'application/json' }
     end
 
-    def configure_services_options(options = {}, header)
+    def configure_services_options(header, options = {})
       {
         header: header,
         base_url: options[:base_url],
