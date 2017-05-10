@@ -17,7 +17,7 @@ describe TMJ::Services::TestCase do
       .to_return(status: 200, body: '')
 
     test_case = client.TestCase.update('JQA-T123', update_test_case_body)
-    expect(test_case.response.code).to eq 200
+    expect(test_case.response.code).to eq '200'
   end
 
   it 'find a test case matching a given key' do
@@ -25,7 +25,7 @@ describe TMJ::Services::TestCase do
       .to_return(status: 200, body: get_mock_response('test_case/JQA-T123.find.get.json'))
 
     test_case = client.TestCase.find('JQA-T123')
-    expect(test_case.response.code).to eq 200
+    expect(test_case.response.code).to eq '200'
   end
 
   it 'delete a test case matching a given key' do
@@ -33,7 +33,7 @@ describe TMJ::Services::TestCase do
       .to_return(status: 204, body: '')
 
     test_case = client.TestCase.delete('JQA-T123')
-    expect(test_case.response.code).to eq 204
+    expect(test_case.response.code).to eq '204'
   end
 
   it 'search for a test case based on the passed quiry' do
@@ -41,6 +41,6 @@ describe TMJ::Services::TestCase do
       .to_return(status: 200, body: get_mock_response('test_case/JQA-T123.search.get.json'))
 
     test_case = client.TestCase.search(search_query)
-    expect(test_case.response.code).to eq 200
+    expect(test_case.response.code).to eq '200'
   end
 end

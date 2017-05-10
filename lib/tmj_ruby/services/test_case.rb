@@ -1,5 +1,3 @@
-require_relative '../error_handeling/test_case_error'
-
 module TMJ
   module Services
     # TMJ::Services::TestCase provides methods for working with test cases
@@ -17,9 +15,8 @@ module TMJ
       #   TMJ::Client.new.TestCase.create({"projectKey": "JQA", "name": "Ensure the axial-flow pump is enabled"})
       #
       def create(body)
-        @response = self.class.post('/rest/kanoahtests/1.0/testcase', body: body.to_json, headers: @header)
-        raise TMJ::TestCaseError, response unless response.code == 201
-        self
+        self.class.post('/rest/kanoahtests/1.0/testcase', body: body.to_json, headers: @header)
+#        raise TMJ::TestCaseError, response unless response.code == 201
       end
 
       # Updates test case
@@ -29,9 +26,8 @@ module TMJ
       # @example Update existing test case
       #
       def update(test_case_id, body)
-        @response = self.class.put("/rest/kanoahtests/1.0/testcase/#{test_case_id}", body: body.to_json, headers: @header)
-        raise TMJ::TestCaseError, response unless response.code == 200
-        self
+        self.class.put("/rest/kanoahtests/1.0/testcase/#{test_case_id}", body: body.to_json, headers: @header)
+        #raise TMJ::TestCaseError, response unless response.code == 200
       end
 
       # Deletes test case
@@ -41,9 +37,8 @@ module TMJ
       # @example Delete existing test case
       #
       def delete(test_case_id)
-        @response = self.class.delete("/rest/kanoahtests/1.0/testcase/#{test_case_id}", headers: @header)
-        raise TMJ::TestCaseError, response unless response.code == 204
-        self
+        self.class.delete("/rest/kanoahtests/1.0/testcase/#{test_case_id}", headers: @header)
+        #raise TMJ::TestCaseError, response unless response.code == 204
       end
 
       # Finds specific test case
@@ -53,9 +48,8 @@ module TMJ
       # @example Find existing test case
       #
       def find(test_case_id)
-        @response = self.class.get("/rest/kanoahtests/1.0/testcase/#{test_case_id}", headers: @header)
-        raise TMJ::TestCaseError, response unless response.code == 200
-        self
+        self.class.get("/rest/kanoahtests/1.0/testcase/#{test_case_id}", headers: @header)
+        #raise TMJ::TestCaseError, response unless response.code == 200
       end
 
       # Searches for test cases based on the provided quiry
@@ -65,9 +59,8 @@ module TMJ
       # @example Search for an existed test case
       #
       def search(query_string)
-        @response = self.class.get("/rest/kanoahtests/1.0/testcase/search?query=#{query_string}", headers: @header, query: { query: query_string })
-        raise TMJ::TestCaseError, response unless response.code == 200
-        self
+        self.class.get("/rest/kanoahtests/1.0/testcase/search?query=#{query_string}", headers: @header, query: { query: query_string })
+        #raise TMJ::TestCaseError, response unless response.code == 200
       end
 
       # Adds  attachment to a test case
@@ -77,16 +70,14 @@ module TMJ
       # @example Add attachment to an existed test case
       #
       def add_attachment(test_case_id) # TODO: need to fix this.
-        @response = self.class.get("/rest/kanoahtests/1.0/testcase/#{test_case_id}/attachment", headers: @header)
-        raise TMJ::TestCaseError, response unless response.code == 201
-        self
+        self.class.get("/rest/kanoahtests/1.0/testcase/#{test_case_id}/attachment", headers: @header)
+        #raise TMJ::TestCaseError, response unless response.code == 201
       end
 
       def create_new_test_result(test_data)
         body = process_result(test_data)
-        @response = self.class.post("/rest/kanoahtests/1.0/testresult", body: body.to_json, headers: @header)
-        raise TMJ::TestCaseError, response unless response.code == 201
-        self
+        self.class.post("/rest/kanoahtests/1.0/testresult", body: body.to_json, headers: @header)
+        #raise TMJ::TestCaseError, response unless response.code == 201
       end
 
       private
