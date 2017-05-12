@@ -44,12 +44,20 @@ module TMJ
       private
       def process_result(test_data)
         {
-        'status'        => test_data[:status],
-        'environment'   => @environment,
-        'comment'       => test_data[:comment],
-        'executionTime' => test_data[:execution_time],
-        'scriptResults' => test_data[:script_results]
+            'status'        => test_data[:status],
+            'environment'   => configure_env(test_data),
+            'comment'       => test_data[:comment],
+            'executionTime' => test_data[:execution_time],
+            'scriptResults' => test_data[:script_results]
         }.delete_if { |k, v| v.nil? }
+      end
+
+      def configure_env(test_data)
+        if test_data[:environment].nil?
+          @environment
+        else
+          test_data[:environment]
+        end
       end
     end
   end
