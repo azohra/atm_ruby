@@ -10,6 +10,7 @@ module TMJ
                  when 400 then raise_400
                  when 401 then raise_401
                  when 404 then raise_404
+                 when 500 then raise_500
                  end
     end
 
@@ -19,6 +20,10 @@ module TMJ
 
     def raise_404
       'No Test Run has been found with the given key'
+    end
+
+    def raise_500
+      'Internal server error. Make sure thats test run id is provided or run_only_found_tests set to false'
     end
   end
 end
