@@ -16,3 +16,4 @@ require_relative 'tmj_ruby/services/test_run'
 require_relative 'client'
 
 require 'tmj_ruby/version'
+TMJ.configure do; end
