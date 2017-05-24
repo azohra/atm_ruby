@@ -45,45 +45,6 @@ client = TMJ::Client.new(base_url: 'http://localhost', auth_type: :basic,
                          environment: 'Mobile', username: 'Test', password: 'test')
 ```
 
-#### Test Case
-
-Create
-```ruby
-client = TMJ::Client.new
-client.TestCase.create({ "projectKey": 'JQA', "name": 'Ensure the axial-flow pump is enabled' })
-```
-
-Update
-```ruby
-client = TMJ::Client.new
-client.TestCase.update('JQA-T1234', {"name": "Ensure the axial-flow pump is enabled"})
-```
-
-Delete
-```ruby
-client = TMJ::Client.new
-client.TestCase.delete('JQA-T1234')
-```
-
-Find
-```ruby
-client = TMJ::Client.new
-client.TestCase.find('JQA-T1234')
-```
-
-Search
-```ruby
-client = TMJ::Client.new
-client.TestCase.find('projectKey = "JQA"')
-```
-
-Add Attachment - TODO
-
-Create New Test Result
-
-#### Test Plan
-#### Test Run
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
