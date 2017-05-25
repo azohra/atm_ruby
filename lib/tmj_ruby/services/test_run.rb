@@ -1,6 +1,9 @@
 module TMJ
   module Services
-    # TNJ::Services::TestRun
+    # TMJ::Services::TestRun provides methods for working with test runs
+    #
+    # @see https://www.kanoah.com/docs/public-api/1.0/ more info regarding test cases can be found here
+    #
     class TestRun < TMJ::Services::Base
       attr_reader :test_run_id
 
@@ -8,33 +11,103 @@ module TMJ
         @test_run_id = options[:test_run_id]
         super(options)
       end
-
+      
+      # Creates new test run
+      #
+      # @param [Hash] test_run_data
+      #
+      # @example Create new test case
+      #   TMJ::Client.new.TestRun.create({"name": "Full regression","projectKey": "JQA"})
+      #
       def create(test_run_data)
-        self.class.post("/rest/kanoahtests/1.0/testrun", body: body.to_json, headers: @header)
-        #raise TMJ::TestRunError, response unless response.code == 201
+        self.class.post("/rest/kanoahtests/1.0/testrun", body: body.to_json, headers: @header).tap do |response|
+          raise TMJ::TestRunError, response unless response.code == 201
+        end
       end
-
+      
+      # Retrive specific test run
+      #
+      # @param [String] test_run_id
+      #
+      # @example Create new test case
+      #   TMJ::Client.new.TestRun.find('DD-R123')
+      #
       def find(test_run_id)
-        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: @header)
-        #raise TMJ::TestRunError, response unless response.code == 200
+        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: @header).tap do |response|
+          raise TMJ::TestRunError, response unless response.code == 200
+        end
       end
-
+      
+      # Delete specific test run
+      #
+      # @param [String] test_run_id
+      #
+      # @example Create new test case
+      #   TMJ::Client.new.TestRun.delete('DD-R123')
+      #
       def delete(test_run_id)
-        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: @header)
-        #raise TMJ::TestRunError, response unless response.code == 204
+        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: @header).tap do |response|
+          raise TMJ::TestRunError, response unless response.code == 204
+        end
       end
-
-      def search(project_id)
-        self.class.get("/rest/kanoahtests/1.0/testrun/search?query=projectKey = '#{project_id}'", headers: @header)
-        #raise TMJ::TestRunError, response unless response.code == 200
+      
+      # Searches for a testrun based on the provided quiry
+      #
+      # @param [String] test_run_id
+      #
+      # @example Create new test case
+      #   TMJ::Client.new.TestRun.search('projectKey = "JQA"')
+      #
+      def search(query_string)
+        self.class.get("/rest/kanoahtests/1.0/testrun/search?query=#{query_string}", headers: @header).tap do |response|
+          raise TMJ::TestRunError, response unless response.code == 200
+        end
       end
-
+      
+      # Create new result for a test run
+      #
+      # @param [String] test_run_key
+      # @param [String] test_case_id
+      # @param [Hash]   test_data      
+      #
+      # @example
+      #   test_data = {
+      #   "status": "Fail",
+      #   "scriptResults": [
+      #     {
+      #       "index": 0,
+      #       "status": "Fail",
+      #       "comment": "This steps has failed."
+      #     }
+      #   ]
+      # }
+      #   TMJ::Client.new.TestRun.create_new_test_run_result('DD-R123','DD-T123', test_data)
+      #
       def create_new_test_run_result(test_run_key = @test_run_id, test_case_id, test_data)
         body = process_result(test_data)
         self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_key}/testcase/#{test_case_id}/testresult", body: body.to_json, headers: @header)
         #raise TMJ::TestRunError, response unless response.code == 201
       end
-
+      
+      # Update latest result for a test run
+      #
+      # @param [String] test_run_key
+      # @param [String] test_case_id
+      # @param [Hash]   test_data      
+      #
+      # @example
+      #   test_data = {
+      #   "status": "Fail",
+      #   "scriptResults": [
+      #     {
+      #       "index": 0,
+      #       "status": "Fail",
+      #       "comment": "This steps has failed."
+      #     }
+      #   ]
+      # }
+      #   TMJ::Client.new.TestRun.update_last_test_run_result('DD-R123','DD-T123', test_data)
+      #
       def update_last_test_run_result(test_run_key = @test_run_id, test_case_id, test_data)
         body = process_result(test_data)
         self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_key}/testcase/#{test_case_id}/testresult", body: body.to_json, headers: @header)
@@ -45,19 +118,13 @@ module TMJ
       def process_result(test_data)
         {
             'status'        => test_data[:status],
-            'environment'   => configure_env(test_data),
-            'comment'       => test_data[:comment],
-            'executionTime' => test_data[:execution_time],
+            'environment'   => test_data.fetch(:environment, @environment),
+            'comment'       => test_data.fetch(:comment, nil),
+            'userKey'       => test_data.fetch(:username, nil),
+            'executionTime' => test_data.fetch(:execution_time, nil),
+            'executionDate' => test_data.fetch(:execution_date, nil),
             'scriptResults' => test_data[:script_results]
         }.delete_if { |k, v| v.nil? }
-      end
-
-      def configure_env(test_data)
-        if test_data[:environment].nil?
-          @environment
-        else
-          test_data[:environment]
-        end
       end
     end
   end
