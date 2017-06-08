@@ -92,7 +92,7 @@ module TMJ
       def create_new_test_result(test_data)
         body = process_result(test_data)
         self.class.post('/rest/kanoahtests/1.0/testresult', body: body.to_json, headers: @header).tap do |response|
-          raise TMJ::TestCaseError, response unless response.code == 201
+          raise TMJ::TestCaseError, response unless response.code == 200
         end
       end
 
