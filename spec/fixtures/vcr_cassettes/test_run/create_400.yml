@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost/rest/kanoahtests/1.0/testrun
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test Run"}'
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      X-Arequestid:
+      - 1273x11935400x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=9DFDE9C02823CB703B189E459E14454E;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|2be8b34547ca46d8d26f5d273c3bbebdfb91d89e|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - fyhwia
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 12 Jul 2017 01:13:36 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"errorMessages":["The field projectKey is required."]}'
+    http_version: 
+  recorded_at: Wed, 12 Jul 2017 01:13:36 GMT
+recorded_with: VCR 3.0.3

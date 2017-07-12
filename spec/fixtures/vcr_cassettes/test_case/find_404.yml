@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost/rest/kanoahtests/1.0/testcase/CC-T277492
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: ''
+    headers:
+      X-Arequestid:
+      - 942x11872286x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=70C0A72B1B64745C796151FA256B5B72;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|c363a12675bb30a1c48acd994b748ff5d6ab1179|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 19cvp3d
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html;charset=UTF-8
+      Content-Length:
+      - '0'
+      Date:
+      - Tue, 11 Jul 2017 19:42:52 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 19:43:29 GMT
+recorded_with: VCR 3.0.3

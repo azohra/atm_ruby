@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost/rest/kanoahtests/1.0/testrun
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test Run","projectKey":"BBQ"}'
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      X-Arequestid:
+      - 974x11884080x2
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=F426637DB26A0680E44FA63A4049A6C8;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|5187768273408bee08172f12af94cb644e461fe9|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 1ao65mg
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 Jul 2017 20:14:46 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"key":"BBQ-R56"}'
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 20:15:25 GMT
+recorded_with: VCR 3.0.3

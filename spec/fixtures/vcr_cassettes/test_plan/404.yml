@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost/rest/kanoahtests/1.0/testplan/CC-P90
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: ''
+    headers:
+      X-Arequestid:
+      - 719x11787261x2
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=9ED663ACE4FEBD0D097C8D67F32B6446;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|1dbdacd9ec4f95ef2590e0fef9932ed6c6b8935a|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 101m65d
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html;charset=UTF-8
+      Content-Length:
+      - '0'
+      Date:
+      - Tue, 11 Jul 2017 15:59:44 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 16:00:22 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost/rest/kanoahtests/1.0/testrun/BBQ-R56
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 846x12127689x2
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=DB184D8CCBC23327195F8C83F3B0FB53;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|16da1c27db7fc0a68de0fe05c82c7981e9c74074|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - chq41u
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 12 Jul 2017 18:06:21 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"estimatedTime":0,"executionTime":0,"projectKey":"BBQ","testCaseCount":1,"plannedStartDate":"2017-07-11T20:14:47.792Z","name":"Test
+        Run","issueCount":0,"items":[{"testCaseKey":"BBQ-T417","executionDate":"2017-07-12T17:56:49.446Z","userKey":"test","status":"Not
+        Executed"}],"plannedEndDate":"2017-07-11T20:14:47.792Z","key":"BBQ-R56","executionSummary":{"Not
+        Executed":1},"status":"Not Executed"}'
+    http_version: 
+  recorded_at: Wed, 12 Jul 2017 18:07:01 GMT
+recorded_with: VCR 3.0.3

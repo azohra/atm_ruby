@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost/rest/kanoahtests/1.0/testcase
+    body:
+      encoding: UTF-8
+      string: '{"name":"Ensure the axial-flow pump is enabled"}'
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      X-Arequestid:
+      - 947x11873915x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=2EADF5279DE8BE9F02B8F2F0B9BCAE34;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|c11085aadc966c87b334d3c18eaef404997d87a0|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 1lymstc
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 Jul 2017 19:47:14 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"errorMessages":["The field projectKey is required."]}'
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 19:47:52 GMT
+recorded_with: VCR 3.0.3
