@@ -4,11 +4,11 @@ module TMJ
 
     def_instance_delegators :response, :code
     attr_reader :response
-    
+
     def raise_400
       "\nStatus Code: 400\nError Message:\n#{response.parsed_response['errorMessages'].join("\n")}"
     end
-    
+
     def raise_401
       "\nStatus Code: 401\nError Message: Client must be authenticated to access this resource."
     end

@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost/rest/kanoahtests/1.0/testcase/CC-T2774
+    body:
+      encoding: UTF-8
+      string: '{"name":"Ensure the axial-flow pump is disabled"}'
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 839x11830433x2
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=93C3EE2B66D3E0E2F9720BB1D0D8C1B3;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|893cc60c69490e6b8fce840d556c14ae9b1e29ef|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 13p0tf
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '0'
+      Date:
+      - Tue, 11 Jul 2017 17:59:27 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 18:00:05 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost/rest/kanoahtests/1.0/testrun/BBQ-R55/testcase/BBQ-T417/testresult
+    body:
+      encoding: UTF-8
+      string: '{"status":"Pass"}'
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      X-Arequestid:
+      - 1012x11900543x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=A32E916E70078DF60A617054DF332C39;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|bb2d04bfdebc4aa80ad51798a75fe7c53e3465b2|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 1o1810o
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 Jul 2017 20:52:12 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":124895}'
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 20:52:49 GMT
+recorded_with: VCR 3.0.3

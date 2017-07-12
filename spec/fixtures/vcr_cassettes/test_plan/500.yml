@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost/rest/kanoahtests/1.0/testplan/CC-P9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 500
+      message: ''
+    headers:
+      X-Arequestid:
+      - 664x11761586x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=D0B39374E97DEE3EB1CBF67EC53BDB42;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|490794133d7fc0a282a82c9e9bbf5f1ef5d2424a|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - hv9brz
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 Jul 2017 15:04:45 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 15:05:22 GMT
+recorded_with: VCR 3.0.3

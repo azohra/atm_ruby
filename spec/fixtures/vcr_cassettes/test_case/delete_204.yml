@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: http://localhost/rest/kanoahtests/1.0/testcase/CC-T2774
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: ''
+    headers:
+      X-Arequestid:
+      - 853x11836547x2
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=AEF1ABF11413FC3D29E03BD3D66DCC35;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|d556f82ce7f3940e8e6a121d5105dc17551c47d2|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - ndxc49
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html;charset=UTF-8
+      Date:
+      - Tue, 11 Jul 2017 18:13:50 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 18:14:28 GMT
+recorded_with: VCR 3.0.3

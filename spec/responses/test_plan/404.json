@@ -1,0 +1,43 @@
+{
+  "data": {
+    "pairs": [
+      {
+        "response": {
+          "status": 404,
+          "body": "",
+          "encodedBody": false,
+          "headers": {
+          }
+        },
+        "request": {
+          "path": {
+            "exactMatch": "/rest/kanoahtests/1.0/testplan/CC-P90"
+          },
+          "method": {
+            "exactMatch": "GET"
+          },
+          "destination": {
+            "exactMatch": "localhost"
+          },
+          "scheme": {
+            "exactMatch": "http"
+          },
+          "query": {
+            "exactMatch": ""
+          },
+          "body": {
+            "jsonMatch": ""
+          }
+        }
+      }
+    ],
+    "globalActions": {
+      "delays": []
+    }
+  },
+  "meta": {
+    "schemaVersion": "v2",
+    "hoverflyVersion": "v0.12.0",
+    "timeExported": "2017-06-14T13:39:04-04:00"
+  }
+}

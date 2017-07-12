@@ -1,3 +1,5 @@
+require 'forwardable'
+
 module TMJ
   module Services
     # TMJ::Services::Base Base class for all of the services
@@ -8,17 +10,17 @@ module TMJ
     #
     class Base
       include HTTParty
+      extend Forwardable
 
       default_options.update(verify: false)
       format :json
 
-      attr_reader :response, :header, :project_id
+      attr_reader :auth_header, :response
+      def_delegators :@response, :code, :body, :header
 
-      def initialize(options = {}) # TODO: add exception for project_id
-        self.class.base_uri options[:base_url]
-        @header     = options[:header]
-        @project_id = options[:project_id]
-        @environment = options.fetch(:environment) { nil }
+      def initialize(**args)
+        self.class.base_uri args[:base_url]
+        @auth_header = args[:auth_header]
       end
     end
   end

@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost/rest/kanoahtests/1.0/testcase/search?query=projectKey%20=%20%22BB%22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 845x11832726x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=97591ABC939C6A13DA7EB9CB1A5950B0;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|d94b0aac89a9d17456e37a6c9b8273882500ba2f|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - msglz0
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 Jul 2017 18:05:24 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 18:06:01 GMT
+recorded_with: VCR 3.0.3

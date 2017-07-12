@@ -1,0 +1,43 @@
+{
+  "data": {
+    "pairs": [
+      {
+        "response": {
+          "status": 201,
+          "body": "{\"key\":\"JQA-T123\"}",
+          "encodedBody": false,
+          "headers": {
+          }
+        },
+        "request": {
+          "path": {
+            "exactMatch": "/rest/kanoahtests/1.0/testcase"
+          },
+          "method": {
+            "exactMatch": "POST"
+          },
+          "destination": {
+            "exactMatch": "localhost"
+          },
+          "scheme": {
+            "exactMatch": "http"
+          },
+          "query": {
+            "exactMatch": ""
+          },
+          "body": {
+            "jsonMatch": ""
+          }
+        }
+      }
+    ],
+    "globalActions": {
+      "delays": []
+    }
+  },
+  "meta": {
+    "schemaVersion": "v2",
+    "hoverflyVersion": "v0.12.0",
+    "timeExported": "2017-06-14T12:48:10-04:00"
+  }
+}
