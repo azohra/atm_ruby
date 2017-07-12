@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost/rest/kanoahtests/1.0/testresult
+    body:
+      encoding: UTF-8
+      string: '{"projectKey":"CC","testCaseKey":"CC-T2774","status":"Pass"}'
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 852x11835837x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=07D7DD5282B9E6A0BDD5C20E00700E3E;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|8a87e6b3a40557806320b0097aa305d55cbc4bdb|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 1q56sdc
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 Jul 2017 18:12:45 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":124883}'
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 18:13:22 GMT
+recorded_with: VCR 3.0.3

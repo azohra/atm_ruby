@@ -5,13 +5,14 @@ module TMJ
     # @see https://www.kanoah.com/docs/public-api/1.0/ more info regarding test cases can be found here
     #
     class TestRun < TMJ::Services::Base
-      attr_reader :test_run_id
+      attr_reader :test_run_id, :environment
 
-      def initialize(options = {})
-        @test_run_id = options[:test_run_id]
-        super(options)
+      def initialize(**args)
+        @test_run_id = args.delete(:test_run_id)
+        @environment = args.delete(:environment)
+        super(args)
       end
-      
+    
       # Creates new test run
       #
       # @param [Hash] test_run_data
@@ -20,8 +21,9 @@ module TMJ
       #   TMJ::Client.new.TestRun.create({"name": "Full regression","projectKey": "JQA"})
       #
       def create(test_run_data)
-        self.class.post("/rest/kanoahtests/1.0/testrun", body: body.to_json, headers: @header).tap do |response|
-          raise TMJ::TestRunError, response unless response.code == 201
+        self.class.post("/rest/kanoahtests/1.0/testrun", body: test_run_data.to_json, headers: auth_header).tap do |r|
+          @response = r
+          raise TMJ::TestRunError, response unless code == 201
         end
       end
       
@@ -33,8 +35,9 @@ module TMJ
       #   TMJ::Client.new.TestRun.find('DD-R123')
       #
       def find(test_run_id)
-        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: @header).tap do |response|
-          raise TMJ::TestRunError, response unless response.code == 200
+        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: auth_header).tap do |r|
+          @response = r
+          raise TMJ::TestRunError, response unless code == 200
         end
       end
       
@@ -46,8 +49,9 @@ module TMJ
       #   TMJ::Client.new.TestRun.delete('DD-R123')
       #
       def delete(test_run_id)
-        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: @header).tap do |response|
-          raise TMJ::TestRunError, response unless response.code == 204
+        self.class.delete("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: auth_header).tap do |r|
+          @response = r
+          raise TMJ::TestRunError, response unless code == 204
         end
       end
       
@@ -59,8 +63,9 @@ module TMJ
       #   TMJ::Client.new.TestRun.search('projectKey = "JQA"')
       #
       def search(query_string)
-        self.class.get("/rest/kanoahtests/1.0/testrun/search?query=#{query_string}", headers: @header).tap do |response|
-          raise TMJ::TestRunError, response unless response.code == 200
+        self.class.get("/rest/kanoahtests/1.0/testrun/search?query=#{query_string}", headers: auth_header).tap do |r|
+          @response = r
+          raise TMJ::TestRunError, response unless code == 200
         end
       end
       
@@ -84,9 +89,10 @@ module TMJ
       #   TMJ::Client.new.TestRun.create_new_test_run_result('DD-R123','DD-T123', test_data)
       #
       def create_new_test_run_result(test_run_key = @test_run_id, test_case_id, test_data)
-        body = process_result(test_data)
-        self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_key}/testcase/#{test_case_id}/testresult", body: body.to_json, headers: @header)
-        #raise TMJ::TestRunError, response unless response.code == 201
+        self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_key}/testcase/#{test_case_id}/testresult", body: test_data.to_json, headers: auth_header).tap do |r|
+          @response = r
+          raise TMJ::TestRunError, response unless code == 201
+        end
       end
       
       # Update latest result for a test run
@@ -109,12 +115,12 @@ module TMJ
       #   TMJ::Client.new.TestRun.update_last_test_run_result('DD-R123','DD-T123', test_data)
       #
       def update_last_test_run_result(test_run_key = @test_run_id, test_case_id, test_data)
-        body = process_result(test_data)
-        self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_key}/testcase/#{test_case_id}/testresult", body: body.to_json, headers: @header)
-        #raise TMJ::TestRunError, response unless response.code == 200
+        self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_key}/testcase/#{test_case_id}/testresult", body: test_data.to_json, headers: auth_header).tap do |r|
+          @response = r
+        end
+          # raise TMJ::TestRunError, response unless response.code == 200
       end
 
-      private
       def process_result(test_data)
         {
             'status'        => test_data[:status],

@@ -1,0 +1,316 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost/rest/kanoahtests/1.0/testcase
+    body:
+      encoding: UTF-8
+      string: '{"projectKey":"CC","somename":"Ensure the axial-flow pump is enabled"}'
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 500
+      message: ''
+    headers:
+      X-Arequestid:
+      - 925x11865599x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=0D275DB1BFD61D14910FCD1C080F50AB;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|b28d8a6c8283a96beeb637b8af72c7e2ba5c04e3|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 1kn0kuh
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept
+      Content-Type:
+      - application/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 Jul 2017 19:25:14 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><status><status-code>500</status-code><message>Unrecognized
+        field \"somename\" (Class com.kanoah.testmanager.service.model.TestCaseDTO),
+        not marked as ignorable\n at [Source: org.apache.catalina.connector.CoyoteInputStream@6b17e893;
+        line: 1, column: 32] (through reference chain: com.kanoah.testmanager.service.model.TestCaseDTO[\"somename\"])</message><stack-trace>org.codehaus.jackson.map.exc.UnrecognizedPropertyException:
+        Unrecognized field \"somename\" (Class com.kanoah.testmanager.service.model.TestCaseDTO),
+        not marked as ignorable\n at [Source: org.apache.catalina.connector.CoyoteInputStream@6b17e893;
+        line: 1, column: 32] (through reference chain: com.kanoah.testmanager.service.model.TestCaseDTO[\"somename\"])\n\tat
+        org.codehaus.jackson.map.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:53)\n\tat
+        org.codehaus.jackson.map.deser.StdDeserializationContext.unknownFieldException(StdDeserializationContext.java:267)\n\tat
+        org.codehaus.jackson.map.deser.std.StdDeserializer.reportUnknownProperty(StdDeserializer.java:673)\n\tat
+        org.codehaus.jackson.map.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:659)\n\tat
+        org.codehaus.jackson.map.deser.BeanDeserializer.handleUnknownProperty(BeanDeserializer.java:1365)\n\tat
+        org.codehaus.jackson.map.deser.BeanDeserializer._handleUnknown(BeanDeserializer.java:725)\n\tat
+        org.codehaus.jackson.map.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:703)\n\tat
+        org.codehaus.jackson.map.deser.BeanDeserializer.deserialize(BeanDeserializer.java:580)\n\tat
+        org.codehaus.jackson.map.ObjectMapper._readValue(ObjectMapper.java:2704)\n\tat
+        org.codehaus.jackson.map.ObjectMapper.readValue(ObjectMapper.java:1315)\n\tat
+        org.codehaus.jackson.jaxrs.JacksonJsonProvider.readFrom(JacksonJsonProvider.java:419)\n\tat
+        com.sun.jersey.spi.container.ContainerRequest.getEntity(ContainerRequest.java:490)\n\tat
+        com.sun.jersey.spi.container.AdaptingContainerRequest.getEntity(AdaptingContainerRequest.java:236)\n\tat
+        com.sun.jersey.server.impl.model.method.dispatch.EntityParamDispatchProvider$EntityInjectable.getValue(EntityParamDispatchProvider.java:123)\n\tat
+        com.sun.jersey.server.impl.inject.InjectableValuesProvider.getInjectableValues(InjectableValuesProvider.java:86)\n\tat
+        com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper$EntityParamInInvoker.getParams(DispatchProviderHelper.java:133)\n\tat
+        com.atlassian.plugins.rest.common.interceptor.impl.DispatchProviderHelper$ResponseOutInvoker._dispatch(DispatchProviderHelper.java:188)\n\tat
+        com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)\n\tat
+        com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302)\n\tat
+        com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)\n\tat
+        com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)\n\tat
+        com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84)\n\tat
+        com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542)\n\tat
+        com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473)\n\tat
+        com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419)\n\tat
+        com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409)\n\tat
+        com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409)\n\tat
+        com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:558)\n\tat
+        com.atlassian.plugins.rest.module.RestDelegatingServletFilter$JerseyOsgiServletContainer.doFilter(RestDelegatingServletFilter.java:154)\n\tat
+        com.sun.jersey.spi.container.servlet.ServletContainer.doFilter(ServletContainer.java:829)\n\tat
+        com.atlassian.plugins.rest.module.RestDelegatingServletFilter.doFilter(RestDelegatingServletFilter.java:68)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:70)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:58)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.plugins.rest.module.servlet.RestServletUtilsUpdaterFilter.doFilterInternal(RestServletUtilsUpdaterFilter.java:22)\n\tat
+        com.atlassian.plugins.rest.module.servlet.RestServletUtilsUpdaterFilter.doFilter(RestServletUtilsUpdaterFilter.java:34)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.applinks.core.rest.context.ContextFilter.doFilter(ContextFilter.java:24)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.applinks.core.rest.context.ContextFilter.doFilter(ContextFilter.java:24)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.applinks.core.rest.context.ContextFilter.doFilter(ContextFilter.java:24)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.applinks.core.rest.context.ContextFilter.doFilter(ContextFilter.java:24)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.applinks.core.rest.context.ContextFilter.doFilter(ContextFilter.java:24)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.servicedesk.internal.web.ExternalCustomerLockoutFilter.doFilter(ExternalCustomerLockoutFilter.java:56)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.mywork.client.filter.ServingRequestsFilter.doFilter(ServingRequestsFilter.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.web.servlet.plugin.request.RedirectInterceptingFilter.doFilter(RedirectInterceptingFilter.java:21)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.prettyurls.filter.PrettyUrlsSiteMeshFixupFilter.doFilter(PrettyUrlsSiteMeshFixupFilter.java:32)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.prettyurls.filter.PrettyUrlsDispatcherFilter.doFilter(PrettyUrlsDispatcherFilter.java:55)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.prettyurls.filter.PrettyUrlsSiteMeshFilter.doFilter(PrettyUrlsSiteMeshFilter.java:79)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.prettyurls.filter.PrettyUrlsMatcherFilter.doFilter(PrettyUrlsMatcherFilter.java:51)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.labs.botkiller.BotKillerFilter.doFilter(BotKillerFilter.java:36)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:70)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:58)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.web.filters.accesslog.AccessLogFilter.executeRequest(AccessLogFilter.java:92)\n\tat
+        com.atlassian.jira.web.filters.accesslog.AccessLogFilter.doFilter(AccessLogFilter.java:78)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.security.xsrf.XsrfTokenAdditionRequestFilter.doFilter(XsrfTokenAdditionRequestFilter.java:49)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.web.filters.pagebuilder.PageBuilderFilter.doFilter(PageBuilderFilter.java:81)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.web.filters.CommittedResponseHtmlErrorRecoveryFilter.doFilter(CommittedResponseHtmlErrorRecoveryFilter.java:55)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:39)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.prettyurls.filter.PrettyUrlsCombinedMatchDispatcherFilter.doFilter(PrettyUrlsCombinedMatchDispatcherFilter.java:56)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:70)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:58)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.web.filters.MauEventFilter.doFilter(MauEventFilter.java:49)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.security.JiraSecurityFilter.lambda$doFilter$0(JiraSecurityFilter.java:76)\n\tat
+        com.atlassian.seraph.filter.SecurityFilter.doFilter(SecurityFilter.java:242)\n\tat
+        com.atlassian.jira.security.JiraSecurityFilter.doFilter(JiraSecurityFilter.java:74)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.security.auth.trustedapps.filter.TrustedApplicationsFilter.doFilter(TrustedApplicationsFilter.java:103)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.seraph.filter.BaseLoginFilter.doFilter(BaseLoginFilter.java:148)\n\tat
+        com.atlassian.jira.web.filters.JiraLoginFilter.doFilter(JiraLoginFilter.java:77)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:39)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.oauth.serviceprovider.internal.servlet.OAuthFilter.doFilter(OAuthFilter.java:79)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.plugins.rest.module.servlet.RestSeraphFilter.doFilter(RestSeraphFilter.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.prettyurls.filter.PrettyUrlsCombinedMatchDispatcherFilter.doFilter(PrettyUrlsCombinedMatchDispatcherFilter.java:56)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:70)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:58)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.johnson.filters.AbstractJohnsonFilter.doFilter(AbstractJohnsonFilter.java:59)\n\tat
+        com.atlassian.jira.web.filters.johnson.JiraJohnson503Filter.doFilter(JiraJohnson503Filter.java:24)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)\n\tat
+        org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)\n\tat
+        org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)\n\tat
+        org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:394)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.servermetrics.CorrelationIdPopulatorFilter.doFilter(CorrelationIdPopulatorFilter.java:30)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:39)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.servicedesk.internal.web.CustomerContextSettingFilter.lambda$invokeFilterChain$0(CustomerContextSettingFilter.java:181)\n\tat
+        com.atlassian.servicedesk.internal.utils.context.ReentrantThreadLocalBasedCodeContext.rteInvoke(ReentrantThreadLocalBasedCodeContext.java:139)\n\tat
+        com.atlassian.servicedesk.internal.utils.context.ReentrantThreadLocalBasedCodeContext.runOutOfContext(ReentrantThreadLocalBasedCodeContext.java:92)\n\tat
+        com.atlassian.servicedesk.internal.utils.context.CustomerContextServiceImpl.runOutOfCustomerContext(CustomerContextServiceImpl.java:64)\n\tat
+        com.atlassian.servicedesk.internal.web.CustomerContextSettingFilter.outOfCustomerContext(CustomerContextSettingFilter.java:174)\n\tat
+        com.atlassian.servicedesk.internal.web.CustomerContextSettingFilter.doFilterImpl(CustomerContextSettingFilter.java:130)\n\tat
+        com.atlassian.servicedesk.internal.web.CustomerContextSettingFilter.doFilter(CustomerContextSettingFilter.java:121)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.jwt.internal.servlet.JwtAuthFilter.doFilter(JwtAuthFilter.java:32)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.analytics.client.filter.JiraAnalyticsFilter.doFilter(JiraAnalyticsFilter.java:42)\n\tat
+        com.atlassian.analytics.client.filter.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:39)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.web.servlet.plugin.request.RedirectInterceptingFilter.doFilter(RedirectInterceptingFilter.java:21)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.web.servlet.plugin.LocationCleanerFilter.doFilter(LocationCleanerFilter.java:36)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter$1.doFilter(DelegatingPluginFilter.java:58)\n\tat
+        com.atlassian.prettyurls.filter.PrettyUrlsCombinedMatchDispatcherFilter.doFilter(PrettyUrlsCombinedMatchDispatcherFilter.java:56)\n\tat
+        com.atlassian.plugin.servlet.filter.DelegatingPluginFilter.doFilter(DelegatingPluginFilter.java:64)\n\tat
+        com.atlassian.plugin.servlet.filter.IteratingFilterChain.doFilter(IteratingFilterChain.java:37)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:70)\n\tat
+        com.atlassian.plugin.servlet.filter.ServletFilterModuleContainerFilter.doFilter(ServletFilterModuleContainerFilter.java:58)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.web.filters.steps.ChainedFilterStepRunner.doFilter(ChainedFilterStepRunner.java:74)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.core.filters.cache.AbstractCachingFilter.doFilter(AbstractCachingFilter.java:31)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.core.filters.encoding.AbstractEncodingFilter.doFilter(AbstractEncodingFilter.java:39)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        com.atlassian.jira.web.filters.PathMatchingEncodingFilter.doFilter(PathMatchingEncodingFilter.java:39)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.startup.JiraStartupChecklistFilter.doFilter(JiraStartupChecklistFilter.java:72)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.web.filters.MultipartBoundaryCheckFilter.doFilter(MultipartBoundaryCheckFilter.java:36)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.servermetrics.MetricsCollectorFilter.doFilter(MetricsCollectorFilter.java:25)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.web.filters.steps.ChainedFilterStepRunner.doFilter(ChainedFilterStepRunner.java:74)\n\tat
+        com.atlassian.jira.web.filters.JiraFirstFilter.doFilter(JiraFirstFilter.java:59)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.gzipfilter.GzipFilter.doFilterInternal(GzipFilter.java:121)\n\tat
+        com.atlassian.gzipfilter.GzipFilter.doFilter(GzipFilter.java:92)\n\tat com.atlassian.jira.web.filters.gzip.JiraGzipFilter.doFilter(JiraGzipFilter.java:45)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        com.atlassian.jira.web.filters.InstantUpgradeHoldingFilter.doFilter(InstantUpgradeHoldingFilter.java:99)\n\tat
+        com.atlassian.core.filters.AbstractHttpFilter.doFilter(AbstractHttpFilter.java:32)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat
+        org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)\n\tat
+        org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)\n\tat
+        org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)\n\tat
+        org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)\n\tat
+        org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\n\tat
+        org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)\n\tat
+        org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)\n\tat
+        org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)\n\tat
+        org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\n\tat
+        org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)\n\tat
+        org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)\n\tat
+        org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat
+        org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat
+        java.lang.Thread.run(Thread.java:745)\n</stack-trace></status>"
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 19:25:51 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost/rest/kanoahtests/1.0/testcase/CC-T2774
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic VGVzdDp0ZXN0==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Arequestid:
+      - 841x11831164x1
+      X-Asen:
+      - SEN-8847361
+      Set-Cookie:
+      - JSESSIONID=350F3821803BC3E16B21FA10638976A0;path=/;HttpOnly
+      - atlassian.xsrf.token=B82A-IOHI-JHOC-BBFT|844aa346206cb85a7e282d6567cf3c95b94edf01|lin;path=/
+      X-Seraph-Loginreason:
+      - OK
+      X-Asessionid:
+      - 146etwx
+      X-Ausername:
+      - ferris
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 Jul 2017 18:01:38 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"projectKey":"CC","testScript":{"id":2376,"type":"PLAIN_TEXT"},"name":"Ensure
+        the axial-flow pump is disabled","priority":"Normal","key":"CC-T2774","status":"Draft"}'
+    http_version: 
+  recorded_at: Tue, 11 Jul 2017 18:02:16 GMT
+recorded_with: VCR 3.0.3
