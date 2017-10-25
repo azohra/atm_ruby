@@ -1,4 +1,4 @@
-module TMJ
+module ATM
   class BaseError < StandardError
     extend Forwardable
 

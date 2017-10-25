@@ -1,7 +1,7 @@
-require 'tmj_ruby/helpers/base_error'
+require 'atm_ruby/helpers/base_error'
 
-module TMJ
-  class TestPlanError < TMJ::BaseError
+module ATM
+  class TestPlanError < ATM::BaseError
     attr_reader :message
 
     def initialize(response)

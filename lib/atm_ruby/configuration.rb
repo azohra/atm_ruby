@@ -1,5 +1,5 @@
 # :nodoc:
-module TMJ
+module ATM
   class << self
     attr_accessor :config
   end

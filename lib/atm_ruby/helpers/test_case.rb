@@ -1,4 +1,4 @@
-module TMJ
+module ATM
   module Helper
     module TestCase
       def retrive_based_on_username(test_run, username)

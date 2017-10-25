@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe TMJ::Services::TestPlan do
-  let(:client)    { TMJ::Client.new }
+RSpec.describe ATM::Services::TestPlan do
+  let(:client)    { ATM::Client.new }
   let(:test_case) { client.TestCase }
 
   context '#create' do
@@ -16,7 +16,7 @@ RSpec.describe TMJ::Services::TestPlan do
       VCR.use_cassette 'test_case/create_500' do
         expect do
           test_case.create({"projectKey": "CC", "somename": "Ensure the axial-flow pump is enabled"})
-        end.to raise_error(TMJ::TestCaseError)
+        end.to raise_error(ATM::TestCaseError)
       end
     end
 
@@ -24,7 +24,7 @@ RSpec.describe TMJ::Services::TestPlan do
       VCR.use_cassette 'test_case/create_400' do
         expect do
           test_case.create({"name": "Ensure the axial-flow pump is enabled"})
-        end.to raise_error(TMJ::TestCaseError)
+        end.to raise_error(ATM::TestCaseError)
       end
     end
   end
@@ -59,7 +59,7 @@ RSpec.describe TMJ::Services::TestPlan do
       VCR.use_cassette 'test_case/find_404' do
         expect do
           test_case.find('CC-T277492')
-        end.to raise_error(TMJ::TestCaseError)
+        end.to raise_error(ATM::TestCaseError)
       end
     end
 
@@ -67,7 +67,7 @@ RSpec.describe TMJ::Services::TestPlan do
       VCR.use_cassette 'test_case/find_401' do
         expect do
           test_case.find('CC-T2774')
-        end.to raise_error(TMJ::TestCaseError)
+        end.to raise_error(ATM::TestCaseError)
       end
     end
   end

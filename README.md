@@ -1,16 +1,16 @@
-# Test Managment For JIRA API Wrapper
-[![Gem Version](https://badge.fury.io/rb/tmj_ruby.svg)](https://badge.fury.io/rb/tmj_ruby)
-[![Build Status](https://travis-ci.org/automation-wizards/tmj_ruby.svg?branch=master)](https://travis-ci.org/automation-wizards/tmj_ruby)
-[![Coverage Status](https://coveralls.io/repos/github/automation-wizards/tmj_ruby/badge.svg?branch=master)](https://coveralls.io/github/automation-wizards/tmj_ruby?branch=master)
-[![Inline docs](http://inch-ci.org/github/automation-wizards/tmj_ruby.svg?branch=master)](http://inch-ci.org/github/automation-wizards/tmj_ruby)
-[![Dependency Status](https://gemnasium.com/badges/github.com/automation-wizards/tmj_ruby.svg)](https://gemnasium.com/github.com/automation-wizards/tmj_ruby)
+# Adaptavist Test Management API Wrapper
+[![Gem Version](https://badge.fury.io/rb/atm_ruby.svg)](https://badge.fury.io/rb/atm_ruby)
+[![Build Status](https://travis-ci.org/automation-wizards/atm_ruby.svg?branch=master)](https://travis-ci.org/automation-wizards/atm_ruby)
+[![Coverage Status](https://coveralls.io/repos/github/automation-wizards/atm_ruby/badge.svg?branch=master)](https://coveralls.io/github/automation-wizards/atm_ruby?branch=master)
+[![Inline docs](http://inch-ci.org/github/automation-wizards/atm_ruby.svg?branch=master)](http://inch-ci.org/github/automation-wizards/atm_ruby)
+[![Dependency Status](https://gemnasium.com/badges/github.com/automation-wizards/atm_ruby.svg)](https://gemnasium.com/github.com/automation-wizards/atm_ruby)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tmj_ruby'
+gem 'atm_ruby'
 ```
 
 And then execute:
@@ -19,7 +19,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install tmj_ruby
+    $ gem install atm_ruby
 
 ## Usage(Look for API refferences [here](https://www.kanoah.com/docs/public-api/1.0/))
 
@@ -27,7 +27,7 @@ Or install it yourself as:
 
 Setup configuration in your setup file if you need to configure it once
 ```ruby
-TMJ.configure do |c|
+ATM.configure do |c|
   c.base_url    = 'http://localhost'
   c.auth_type   = :basic
   c.project_id  = 'PD'
@@ -40,7 +40,7 @@ end
 
 Or do it everytime you create a client
 ```ruby
-client = TMJ::Client.new(base_url: 'http://localhost', auth_type: :basic, 
+client = ATM::Client.new(base_url: 'http://localhost', auth_type: :basic, 
                          project_id: 'PD', test_run_id: 'TR-I123', 
                          environment: 'Mobile', username: 'Test', password: 'test')
 ```
@@ -53,7 +53,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tmj_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/atm_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

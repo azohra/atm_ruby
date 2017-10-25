@@ -2,17 +2,17 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'tmj_ruby/version'
+require 'atm_ruby/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'tmj_ruby'
-  spec.version       = TMJ::VERSION
-  spec.authors       = ['frbk']
+  spec.name          = 'atm_ruby'
+  spec.version       = ATM::VERSION
+  spec.authors       = ['azohra']
   spec.email         = ['']
 
-  spec.summary       = 'Test Managment For JIRA API Wrapper'
-  spec.description   = 'Methods to work with test managment for jira api.'
-  spec.homepage      = 'https://github.com/automation-wizards/tmj_ruby'
+  spec.summary       = 'Adaptavist Test Management API Wrapper'
+  spec.description   = 'Methods to work with test management for jira api.'
+  spec.homepage      = 'https://github.com/azohra/atm_ruby'
   spec.license       = 'MIT'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|

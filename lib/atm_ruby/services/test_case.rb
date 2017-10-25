@@ -1,12 +1,12 @@
-require 'tmj_ruby/helpers/test_case'
-module TMJ
+require 'atm_ruby/helpers/test_case'
+module ATM
   module Services
-    # TMJ::Services::TestCase provides methods for working with test cases
+    # ATM::Services::TestCase provides methods for working with test cases
     #
     # @see https://www.kanoah.com/docs/public-api/1.0/ more info regarding test cases can be found here
     #
-    class TestCase < TMJ::Services::Base
-      include TMJ::Helper::TestCase
+    class TestCase < ATM::Services::Base
+      include ATM::Helper::TestCase
 
       attr_accessor :environment, :project_id
       
@@ -21,12 +21,12 @@ module TMJ
       # @param [Hash] body
       #
       # @example Create new test case
-      #   TMJ::Client.new.TestCase.create({"projectKey": "JQA", "name": "Ensure the axial-flow pump is enabled"})
+      #   ATM::Client.new.TestCase.create({"projectKey": "JQA", "name": "Ensure the axial-flow pump is enabled"})
       #
       def create(body)
         self.class.post('/rest/kanoahtests/1.0/testcase', body: body.to_json, headers: auth_header).tap do |r|
           @response = r
-          raise TMJ::TestCaseError, response unless code == 201
+          raise ATM::TestCaseError, response unless code == 201
         end
       end
 
@@ -39,7 +39,7 @@ module TMJ
       def update(test_case_id, body)
         self.class.put("/rest/kanoahtests/1.0/testcase/#{test_case_id}", body: body.to_json, headers: auth_header).tap do |r|
           @response = r
-          raise TMJ::TestCaseError, response unless code == 200
+          raise ATM::TestCaseError, response unless code == 200
         end
       end
 
@@ -52,7 +52,7 @@ module TMJ
       def delete(test_case_id)
         self.class.delete("/rest/kanoahtests/1.0/testcase/#{test_case_id}", headers: auth_header).tap do |r|
           @response = r
-          raise TMJ::TestCaseError, response unless code == 204
+          raise ATM::TestCaseError, response unless code == 204
         end
       end
 
@@ -65,7 +65,7 @@ module TMJ
       def find(test_case_id)
         self.class.get("/rest/kanoahtests/1.0/testcase/#{test_case_id}", headers: auth_header).tap do |r|
           @response = r
-          raise TMJ::TestCaseError, response unless code == 200
+          raise ATM::TestCaseError, response unless code == 200
         end
       end
 
@@ -78,7 +78,7 @@ module TMJ
       def search(query_string)
         self.class.get("/rest/kanoahtests/1.0/testcase/search?query=#{query_string}", headers: auth_header).tap do |r|
           @response = r
-          raise TMJ::TestCaseError, response unless code == 200
+          raise ATM::TestCaseError, response unless code == 200
         end
       end
 
@@ -91,7 +91,7 @@ module TMJ
       def add_attachment(_test_case_id) # TODO: need to fix this.
         warn 'Not implemented at the moment'
         # self.class.get("/rest/kanoahtests/1.0/testcase/#{test_case_id}/attachment", headers: auth_header).tap do |r|
-        #   raise TMJ::TestCaseError, response unless response.code == 201
+        #   raise ATM::TestCaseError, response unless response.code == 201
         # end
       end
 
@@ -101,12 +101,12 @@ module TMJ
       #
       # @example
       #   test_data = { project: "GG", test_case: 'GG-T1'}
-      #   TMJ::Client.new.TestCase.create_new_test_result(test_data)
+      #   ATM::Client.new.TestCase.create_new_test_result(test_data)
       #
       def create_new_test_result(test_data)
         self.class.post('/rest/kanoahtests/1.0/testresult', body: test_data.to_json, headers: auth_header).tap do |r|
           @response = r
-          raise TMJ::TestCaseError, response unless code == 200
+          raise ATM::TestCaseError, response unless code == 200
         end
       end
 

@@ -1,8 +1,8 @@
 require 'forwardable'
 
-module TMJ
+module ATM
   module Services
-    # TMJ::Services::Base Base class for all of the services
+    # ATM::Services::Base Base class for all of the services
     #
     # @attr_reader [] response - holds data after post/put/delete/get submited
     # @attr_reader [Hash] header - access token for authentication
