@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe TMJ::Services::TestRun do
-  let(:client) { TMJ::Client.new }
+RSpec.describe ATM::Services::TestRun do
+  let(:client) { ATM::Client.new }
   let(:test_run) { client.TestRun }
 
   context '#create' do
@@ -16,7 +16,7 @@ RSpec.describe TMJ::Services::TestRun do
       VCR.use_cassette 'test_run/create_400' do
         expect do
           test_run.create({ "name": "Test Run"})
-        end.to raise_error(TMJ::TestRunError)
+        end.to raise_error(ATM::TestRunError)
       end
     end
 
@@ -24,7 +24,7 @@ RSpec.describe TMJ::Services::TestRun do
       VCR.use_cassette 'test_run/create_401' do
         expect do
           test_run.create({ "name": "Test Run"})
-        end.to raise_error(TMJ::TestRunError)
+        end.to raise_error(ATM::TestRunError)
       end
     end
 
@@ -32,7 +32,7 @@ RSpec.describe TMJ::Services::TestRun do
       VCR.use_cassette 'test_run/create_500' do
         expect do
           test_run.create({ "somename": "Test Run","projectKey": "BBQ"})
-        end.to raise_error(TMJ::TestRunError)
+        end.to raise_error(ATM::TestRunError)
       end
     end
   end
@@ -49,7 +49,7 @@ RSpec.describe TMJ::Services::TestRun do
       VCR.use_cassette 'test_run/find_404' do
         expect do
           test_run.find('BBQ-R555')
-        end.to raise_error(TMJ::TestRunError)
+        end.to raise_error(ATM::TestRunError)
       end
     end
   end

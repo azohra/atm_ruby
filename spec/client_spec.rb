@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe TMJ::Client do
-  let(:unsupported_auth) { TMJ::Client.new(auth_type: :cookie) }
+RSpec.describe ATM::Client do
+  let(:unsupported_auth) { ATM::Client.new(auth_type: :cookie) }
 
   it 'succefully authenticate' do
     expect(subject.gen_auth_token).to eql('VGVzdDp0ZXN0')

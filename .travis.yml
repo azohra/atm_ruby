@@ -8,8 +8,8 @@ deploy:
   provider: rubygems
   api_key:
     secure: DfBHDVzua51mUPP13AaijPkr48GtqmCGPYEJvrHCaWyhmH7VRHRyphEC64It4J3NwgoT9WSsmTeyuc6dwuCQBY24RxXu33x/RwcMns/3qZoeJsp7XrWZFoL9a/gaAfZTz9ndZUc8wofZwnUdVXOHeWnZPCoyZFIt2gIXNV8JB146782ge9CFLU3WhtK0mCUKjxjEM4+ZvSNJiblYtwV2TSPulUz5z+dY0abrWIx2+jL6M4XRY4VuvOx416RulOdA3OrbvnLyC7dLyrdj6tVCsTv6QzcsYhlsAxMQLXqXrI0Pjjkw03ypyIkmynIl0oBstsCOKmqCFr9CiStwoHVq3YE3+rA9KuHWuFbXYKdlEfQeeUktdUQLETR9slZ2XVO7jVAhBnwntDd2Qdcl7B9CwqPc27m7Ow12Y3FMO5+1E70skhAKE1fFkvwauluF64k9NiwbukeJUM4y9daLE7bMqJkdm7y1GBJC0scK1tNpJY1+GsoYcRCtgavHs7OtdM9XSBjuo1GLXnLttGUDKrbzdO9iy+3OJJzSjaa6S6bPQvohCPiB9xRQwjKbTfUXzFqDaDSqC38X1azhQ4SN0J55qA2T4dOuDPArRTfPD1vjmq9rXnuL2g4PmeVWXlcTHi1/oP3NIG0eFHc/mF+/7PpNvx1/6lVrCYHrOSNtKxVbG0Y=
-  gem: tmj_ruby
+  gem: atm_ruby
   on:
     tags: true
-    repo: automation-wizards/tmj_ruby
+    repo: azohra/atm_ruby
     branch: master

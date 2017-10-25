@@ -2,12 +2,12 @@ require 'coveralls'
 Coveralls.wear!
 
 require 'bundler/setup'
-require 'tmj_ruby'
+require 'atm_ruby'
 require 'pry'
 require 'webmock'
 require 'vcr'
 
-TMJ.configure do |c|
+ATM.configure do |c|
   c.base_url    = 'http://localhost'
   c.auth_type   = :basic
   c.project_id  = 'CC'
