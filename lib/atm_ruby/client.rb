@@ -5,12 +5,13 @@ module ATM
   class Client
     attr_accessor :auth_header
 
-    def initialize(**args)
-      options = ATM.config.to_hash.merge(args)
+    def initialize(**options)
+      options = ATM.config.to_hash.merge(options)
       options.each do |key, value|
         singleton_class.class_eval { attr_accessor key }
         send("#{key}=", value)
       end
+
       case options[:auth_type]
       when :basic then @auth_header = set_access_token
       else raise 'Currently only supports basic authentication'
@@ -31,13 +32,21 @@ module ATM
     end
 
     def TestCase
-      ATM::Services::TestCase.new(auth_header: auth_header, base_url: base_url,
-                                  environment: environment, project_id: project_id)
+      ATM::Services::TestCase.new(
+        auth_header: auth_header,
+        base_url: base_url,
+        environment: environment,
+        project_id: project_id
+      )
     end
 
     def TestRun
-      ATM::Services::TestRun.new(auth_header: auth_header, base_url: base_url,
-                                  environment: environment, test_run_id: test_run_id)    
+      ATM::Services::TestRun.new(
+        auth_header: auth_header,
+        base_url: base_url,
+        environment: environment,
+        test_run_id: test_run_id
+      )
     end
   end # Client
 end # ATM

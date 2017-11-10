@@ -18,9 +18,13 @@ module ATM
       attr_reader :auth_header, :response
       def_delegators :@response, :code, :body, :header
 
-      def initialize(**args)
-        self.class.base_uri args[:base_url]
-        @auth_header = args[:auth_header]
+      def initialize(**options)
+        self.class.base_uri options[:base_url]
+        @auth_header = options[:auth_header]
+      end
+
+      def set_response(new_response)
+        @response = new_response
       end
     end
   end
