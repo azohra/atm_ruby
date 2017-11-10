@@ -5,7 +5,7 @@ module ATM
 
     def initialize(response)
       @response = response
-      @message = case response.code
+      @message = case @response.code
                  when 400 then raise_400
                  when 401 then raise_401
                  when 404 then raise_404('No Test Case has been found with the given key.')
