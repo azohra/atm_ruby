@@ -7,10 +7,10 @@ module ATM
     class TestRun < ATM::Services::Base
       attr_reader :test_run_id, :environment
 
-      def initialize(**args)
-        @test_run_id = args.delete(:test_run_id)
-        @environment = args.delete(:environment)
-        super(args)
+      def initialize(**options)
+        @test_run_id = options.delete(:test_run_id)
+        @environment = options.delete(:environment)
+        super(options)
       end
     
       # Creates new test run
@@ -21,8 +21,8 @@ module ATM
       #   ATM::Client.new.TestRun.create({"name": "Full regression","projectKey": "JQA"})
       #
       def create(test_run_data)
-        self.class.post("/rest/kanoahtests/1.0/testrun", body: test_run_data.to_json, headers: auth_header).tap do |r|
-          @response = r
+        self.class.post("/rest/kanoahtests/1.0/testrun", body: test_run_data.to_json, headers: auth_header).tap do |res|
+          set_response(res)
           raise ATM::TestRunError, response unless code == 201
         end
       end
@@ -35,8 +35,8 @@ module ATM
       #   ATM::Client.new.TestRun.find('DD-R123')
       #
       def find(test_run_id)
-        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: auth_header).tap do |r|
-          @response = r
+        self.class.get("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: auth_header).tap do |res|
+          set_response(res)
           raise ATM::TestRunError, response unless code == 200
         end
       end
@@ -49,8 +49,8 @@ module ATM
       #   ATM::Client.new.TestRun.delete('DD-R123')
       #
       def delete(test_run_id)
-        self.class.delete("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: auth_header).tap do |r|
-          @response = r
+        self.class.delete("/rest/kanoahtests/1.0/testrun/#{test_run_id}", headers: auth_header).tap do |res|
+          set_response(res)
           raise ATM::TestRunError, response unless code == 204
         end
       end
@@ -63,15 +63,15 @@ module ATM
       #   ATM::Client.new.TestRun.search('projectKey = "JQA"')
       #
       def search(query_string)
-        self.class.get("/rest/kanoahtests/1.0/testrun/search?query=#{query_string}", headers: auth_header).tap do |r|
-          @response = r
+        self.class.get("/rest/kanoahtests/1.0/testrun/search?query=#{query_string}", headers: auth_header).tap do |res|
+          set_response(res)
           raise ATM::TestRunError, response unless code == 200
         end
       end
       
       # Create new result for a test run
       #
-      # @param [String] test_run_key
+      # @param [String] test_run_id
       # @param [String] test_case_id
       # @param [Hash]   test_data      
       #
@@ -88,16 +88,16 @@ module ATM
       # }
       #   ATM::Client.new.TestRun.create_new_test_run_result('DD-R123','DD-T123', test_data)
       #
-      def create_new_test_run_result(test_run_key = @test_run_id, test_case_id, test_data)
-        self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_key}/testcase/#{test_case_id}/testresult", body: test_data.to_json, headers: auth_header).tap do |r|
-          @response = r
-          raise ATM::TestRunError, response unless code == 201
+      def create_new_test_run_result(test_run_id = @test_run_id, test_case_id, test_data)
+        self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_id}/testcase/#{test_case_id}/testresult", body: test_data.to_json, headers: auth_header).tap do |res|
+          set_response(res)
+          # raise ATM::TestRunError, response unless code == 201
         end
       end
       
       # Update latest result for a test run
       #
-      # @param [String] test_run_key
+      # @param [String] test_run_id
       # @param [String] test_case_id
       # @param [Hash]   test_data      
       #
@@ -114,9 +114,9 @@ module ATM
       # }
       #   ATM::Client.new.TestRun.update_last_test_run_result('DD-R123','DD-T123', test_data)
       #
-      def update_last_test_run_result(test_run_key = @test_run_id, test_case_id, test_data)
-        self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_key}/testcase/#{test_case_id}/testresult", body: test_data.to_json, headers: auth_header).tap do |r|
-          @response = r
+      def update_last_test_run_result(test_run_id = @test_run_id, test_case_id, test_data)
+        self.class.post("/rest/kanoahtests/1.0/testrun/#{test_run_id}/testcase/#{test_case_id}/testresult", body: test_data.to_json, headers: auth_header).tap do |res|
+          set_response(res)
         end
           # raise ATM::TestRunError, response unless response.code == 200
       end

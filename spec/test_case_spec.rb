@@ -91,12 +91,25 @@ RSpec.describe ATM::Services::TestPlan do
   end
 
   it '#process_result' do
-    test_data = { project_id: 'DD', test_case: 'DD-T1', 
-                  status: 'Passed', environment: 'mobile', 
-                  comment: 'comment', execution_time: 0, execution_date: 0 }
-    final_data = {"projectKey"=>"DD", "testCaseKey"=>"DD-T1",
-                  "status"=>"Passed", "environment"=>"mobile",
-                  "comment"=>"comment","executionTime"=>0,"executionDate"=>0}              
+    test_data = {
+      project_id: 'DD',
+      test_case_id: 'DD-T1',
+      status: 'Passed',
+      environment: 'mobile',
+      comment: 'comment',
+      execution_time: 0,
+      execution_date: 0
+    }
+
+    final_data = {
+      "projectKey" => test_data[:project_id],
+      "testCaseKey" => test_data[:test_case_id],
+      "status" => test_data[:status],
+      "environment" => test_data[:environment],
+      "comment" => test_data[:comment],
+      "executionTime" => test_data[:execution_time],
+      "executionDate" =>test_data[:execution_date]
+    }
     expect(test_case.process_result(test_data)).to eql(final_data)
   end
 end
